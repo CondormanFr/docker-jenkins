@@ -1,5 +1,5 @@
 FROM flyceek/centos7-openjdk:latest
-MAINTAINER flyceek <flyceek@gmail.com>
+MAINTAINER rgouyet <romain@gouyet.com>
 
 ARG JENKINS_USER=jenkins
 ENV JENKINS_USER_HOME=/var/jenkins
@@ -41,6 +41,6 @@ RUN yum update -y \
     && chmod +x /usr/local/bin/jenkins-start
 
 VOLUME ${JENKINS_USER_HOME}
-USER ${JENKINS_USER}
+#USER ${JENKINS_USER}
 EXPOSE ${JENKINS_HTTP_PORT}
 CMD ["sh","jenkins-start"]
