@@ -20,6 +20,7 @@ ENV JENKINS_JAVA_OPTIONS='-Xmx512m'
 WORKDIR ${JENKINS_USER_HOME}
 RUN yum update -y \
     && yum install -y sudo git \
+    && yum install -y sudo mercurial \
     && yum clean all \
     && { \
         addgroup -g ${JENKINS_USER_GID} ${JENKINS_USER_GROUP}; \
